@@ -1,0 +1,146 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+
+.header{
+    background-color:#FAAB78;
+    display:flex;
+    align-items: center;
+    height:8vh;
+    width:100%;
+    position:fixed;
+    top:0;
+    z-index: 1000;
+    padding:0;
+    margin:0;
+}
+
+.logo{
+    margin:1.5rem;
+}
+
+.peripheral{
+    width:100%;
+    margin-left:auto;
+    margin-right:2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.peripheral-wrapper{
+   display:flex; 
+}
+
+.peripheral-wrapper div{
+    margin-left:25px;
+}
+
+.peripheral-wrapper div i{
+    padding:5px;
+}
+
+.peripheral-wrapper div i:hover{
+    cursor: pointer;
+    background-color: #888888;
+    border-radius:19px;
+}
+
+.header-clock{
+    display:flex;
+    height:4.5vh;
+    width:125px;
+    text-align: center;
+}
+
+.header-clock div{
+    display:flex;
+    background-color: white;
+    height:100%;
+    width:42px;
+    border:2px solid black;
+    text-align:center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size:28px;
+    border-radius:5px;
+    margin-left:1px;
+}
+
+.nav{
+    height:100vh;
+    width:20%;
+    position:fixed;
+    top:0;
+    background-color: #FFD495;
+    padding:0;
+    margin:0;
+    z-index: 900;
+}
+
+
+
+.nav-wrapper{
+    width:80%;
+    margin:0 auto;
+    margin-top: 12vh;
+}
+
+.nav-wrapper h3{
+margin-top:2rem;
+}
+
+.nav-wrapper ul{
+    margin:0;
+    padding:0;
+    margin-top:10px;
+    list-style: none;
+
+}
+
+.nav-wrapper ul li{
+    margin-top:8px;
+    
+    text-align: center;
+    width:100%;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.nav-wrapper ul li:hover{
+    cursor:pointer;
+    background-color:#888888 ;
+    border-radius:5px;
+}
+
+.nav-wrapper ul li a{
+    text-decoration: none;
+    
+    width:100%;
+    
+    color:black;
+    width:100%;
+    
+}
+
+.container{
+    background-color:whitesmoke;
+    height:100vh;
+    margin-left:20%;
+}
+
+.container-wrapper{
+    height:100%;
+    width:88%;
+    margin:0 auto;
+    margin-top:8vh;
+}
+
+.content-wrapper{
+    padding-top:2rem;
+    padding-left:2rem;
+}
+
+.date{
+    display:flex;
+}
