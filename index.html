@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,29 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div>
         <div class="header">
+            <div class="logo">
+                <img src="logo.jpeg" height="55px">
+            </div>
             <div style="display: flex; justify-content: flex-end;" class="peripheral">
                 <div class="peripheral-wrapper">
-                    <div><i class="fa-regular fa-plus" style="font-size:4vh; color:black;" onclick=onclickadd()></i></div>
-                    <div><i class="fa-solid fa-house" style="font-size:4vh; color:black;" onclick=onclickhome()></i></div>
+                    
+                    <div><i class="fa-solid fa-house" style="font-size:4vh; color:black;" onclick=onclickhome()></i>
+                    </div>
                     <div class="header-clock">
                         <div id="clock-hour">00</div>
-                        
+
                         <div id="clock-minutes">00</div>
-                        
+
                         <div id="clock-seconds">00</div>
                     </div>
                 </div>
@@ -33,86 +41,79 @@
         <div class="nav-wrapper">
             <h3>Listing</h3>
             <ul>
-                
-                 <li onclick=onclickli1()><a href="index.html">To-do list</a></li> 
-                 <hr>
-                 <li onclick=onclickli2()><a href="calender.html">Calender</a></li>
-                 <hr>
-                 <div class="logo">
-                    <img src="reminder.jpeg"height="50">
+                <li onclick=onclickli1()><a href="index.html">To-do list</a></li>
+                <hr>
+                <li onclick=onclickli2()><a href="calender.html">Calender</a></li>
+                <hr>
+                <div class="logo">
                     <li onclick=onclickli3()><a href="reminder.html">Reminder</a></li>
                 </div>
-                 <hr>
+                <hr>
 
-             </ul>
-             <h3>Tools</h3>
-             <ul>
+            </ul>
+            <h3>Tools</h3>
+            <ul>
                 <li onclick=onclickli4()><a href="calculator.html">Calculator</a></li>
                 <hr>
-                 <li onclick=onclickli5()><a href="notepad.html">Notepad</a></li>
-                 <hr>
-             </ul>
+                <li onclick=onclickli5()><a href="notepad.html">Notepad</a></li>
+                <hr>
+            </ul>
         </div>
     </div>
     <div class="container">
         <div class="container-wrapper">
-           <div class="content-wrapper">
-            <div class="date">
-                <p class="today">Today, <p class="today-date"><script> document.write(new Date().toDateString()); </script></p></p>
-               
+            <div class="content-wrapper">
+                <div class="date" style="display: flex; height: auto;">
+                    <p style="margin:none; padding:none; font-weight:bold; font-size:1.3rem;">Today
+                      <p class="today-date" style="margin-top:1.7rem; margin-left:0.7rem; font-size:0.8rem; color:rgb(182, 169, 148)">
+                         <script> document.write(new Date().toDateString()); </script>
+                </div>
+
+                <div>
+                    <div id="add-task" onclick=onclickadd()>
+                        <i class="fa-regular fa-plus" style="font-size:1.1rem; " ></i><p>Add Task</p>
+                    </div>
+
+                    <div id="newTaskForm">
+                        <div class="newTaskFormCover">
+                            <div class="newTaskFormWrapper">
+                                
+                                    <form>
+                                            <p><label for="tasks"><b>Task</b></label></p>
+                                            <textarea id="taskInput" name="tasks" rows="5" placeholder="Enter your task"></textarea>
+                                        
+                                        
+                                        <div>
+                                            <label for="Due Date"><b>Due Date & Time</b></label>
+                                            <div class="duedate-length">
+                                                <input type="date" id="taskDate"><input type="time" id="taskTime">
+                                            </div>
+                                        </div>
+                                        <div class="formButton">
+                                            <button class="formCancel" type="button" onclick="formCancel()"><b>Cancel</b></button> <button type="submit" class="formSubmit" onclick="formSubmit(event)"><b>Add Task</b></button>
+
+                                        </div>
+                                        
+                                    </form>
                 
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+
+                <ul id="Tasks">
+
+                </ul>
             </div>
-           </div>
         </div>
     </div>
-    <script>
-        var hour = document.getElementById("clock-hour")
-        var minutes = document.getElementById("clock-minutes")
-        var seconds = document.getElementById("clock-seconds")
-
-        var clock = setInterval(
-            function time(){
-                var date_now = new Date();
-                var hr=date_now.getHours();
-                var min=date_now.getMinutes();
-                var sec=date_now.getSeconds();
-
-                if(hr < 10){
-                    hr="0"+hr;
-                }
-
-                if(min < 10){
-                    min="0"+min;
-                } 
-
-                if(sec < 10){
-                    min="0"+sec;
-                }
-
-                hour.textContent = hr;
-                minutes.textContent=min;
-                seconds.textContent=sec;
-            },1000
-        );
-
-        function onclickli1(){
-            location.href="index.html"
-        }
-        function onclickli2(){
-            location.href="calender.html"
-        }
-        function onclickli3(){
-            location.href="reminder.html"
-        }
-        function onclickli4(){
-            location.href="calculator.html"
-        }
-        function onclickli5(){
-            location.href="notepad.html"
-        }
-        function onclickhome(){
-            location.href="index.html"
-        }
-    </script>     
+    <script src="index.js">
+       
+    </script>
 </body>
+
 </html>

@@ -1,24 +1,27 @@
 .calculator{
-	border:2px solid #ddd;
-	width: 280px;
+	border:5px solid #ddd;
+	width: 860px;
 	box-sizing: border-box;
-	margin: 40px auto 0;
+	margin: 50px auto 0;
 	font-family: verdana;
 }
 .calculator .form-control{
-	height: 60px;
+	height: 70px;
+	width: 800px;
 }
 .calculator .form-group{
 	margin-bottom: 0;
+	height: 100px;
 }
 .calculator input[type=text]{
 	font-size: 1.5rem;
-	color:#333;
+	color:rgb(29, 28, 28);
 }
 .calculator .btn {
 	font-size: 1.5rem;
 	color:#333;
 	width: 80px;
+	height: 38px;
 }
 .calculator .btn-op {
 	background-color: #999999;
