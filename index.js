@@ -106,22 +106,32 @@ var todoText = document.createTextNode(inputedTasks);
 todoSpan.appendChild(todoText);
 
 // Create a new span element for the due date
-var dateSpan = document.createElement("span");
-var dateText = document.createTextNode(inputedDueDate);
-dateSpan.appendChild(dateText);
-dateSpan.className='date-span'
+var dueToSpan = document.createElement("span");
+var dueToText = document.createTextNode("Due To: ");
+dueToSpan.appendChild(dueToText);
+dueToSpan.className='date-span';
 
+// Split the date input into day, month, and year
+var dateArray = inputedDueDate.split("-");
+var year = dateArray[0];
+var month = dateArray[1];
+var day = dateArray[2];
+var dateSpan = document.createElement("span");// Create a new span element for the due date
+var dateText = document.createTextNode(day + "-" + month + "-" + year );
+dateSpan.appendChild(dateText);
+dateSpan.className='date-span';
 
 //create a new span element for the due time
 var timeSpan=document.createElement('span')
-var timeText=document.createTextNode(inputedDueTime)
+var timeText=document.createTextNode(", " + inputedDueTime);
 timeSpan.appendChild(timeText)
-
+timeSpan.className='time-span';
 
 // Add the todo and due date spans to the li element
+dueToSpan.appendChild(dateSpan);
+dueToSpan.appendChild(timeSpan);
 li.appendChild(todoSpan);
-li.appendChild(dateSpan);
-li.appendChild(timeText);
+li.appendChild(dueToSpan);
 
 // If input value is empty, show an alert message, else append the li to the list
 if (inputedTasks === '') {

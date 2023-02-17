@@ -124,6 +124,7 @@ margin-top:2rem;
     background-color:whitesmoke;
     height:100vh;
     margin-left:20%;
+    position:relative;
 }
 
 .container-wrapper{
@@ -136,6 +137,7 @@ margin-top:2rem;
 .content-wrapper{
     padding-top:2rem;
     padding-left:2rem;
+    position:relative;
 }
 
 .today-date{
@@ -266,7 +268,34 @@ textarea {
 
   }
 
+.li-task{
+    margin-top:1.5rem;
+    border-bottom:1px solid red;
+    padding-bottom:8px;
+    display:flex;
+    height:fit-content;
+}
+
   .li-task span{
-    font-size:20px
+    font-size:20px;
+  }
+
+  
+.date-span{
+    
+}
+
+  .delete{
+    position: absolute;
+    right: 0;
+    padding:0.2rem 5px 0.2rem 5px;
+  }
+
+  .delete:hover{
+    background-color: red ;
+  }
+
+  .li-task text{
+    background-color: black;
   }
   
