@@ -53,10 +53,7 @@ let navbar=document.querySelector(".nav")
 menuBtn.onclick= () =>{
   menuBtn.classList.toggle("fa-times");
   navbar.classList.toggle('show')
-  console.log(navbar)
 }
-
-
 
 let newTask=document.getElementById("newTaskForm")
 let body=document.body
@@ -101,6 +98,8 @@ function formSubmit(event){
     event.preventDefault()
     newTask.style.display='none'
     Tasks.style.display='block'
+
+
 
 
 // Get the input value and the due date value
@@ -169,5 +168,6 @@ for (i = 0; i < close.length; i++) {
   }
 }
 }
+
 
 
