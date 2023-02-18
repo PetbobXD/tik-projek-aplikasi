@@ -46,6 +46,18 @@ function onclickhome() {
     location.href = "index.html"
 }
 
+
+let menuBtn=document.getElementById('menu-btn')
+let navbar=document.querySelector(".nav")
+
+menuBtn.onclick= () =>{
+  menuBtn.classList.toggle("fa-times");
+  navbar.classList.toggle('show')
+  console.log(navbar)
+}
+
+
+
 let newTask=document.getElementById("newTaskForm")
 let body=document.body
 let addTask=document.getElementById('add-task')

@@ -102,7 +102,7 @@ html,body{
     margin-top:8px;
     
     
-    padding-top:10px;
+    padding-top:10px;   
     padding-bottom:10px;
 }
 
@@ -129,9 +129,17 @@ html,body{
     margin-right:10px;
 }
 
+#menu-btn{
+    display:none;
+    margin-right:15px;
+    cursor:pointer;
+    z-index:9999999999;
+}
+
+/* container */
+
 .container{
-    background-color:whitesmoke;
-    min-height:100vh;
+    height: 100%;
     margin-left:20%;
     position:relative;
 }
@@ -152,7 +160,7 @@ html,body{
 .today-date{
     padding:none;
     margin:none;
-    font-size:0.9   rem;
+    font-size:0.9rem;
     font-weight: none;
 }
 
@@ -289,10 +297,6 @@ textarea {
     font-size:20px;
   }
 
-  
-.date-span{
-    
-}
 
   .delete{
     position: absolute;
@@ -308,3 +312,31 @@ textarea {
     background-color: black;
   }
   
+@media screen and (max-width: 768px){
+    #menu-btn {
+        display: inline-block;
+        transition: .2s linear;
+     }
+
+    .nav{
+        display:none;
+        background-color: rgba(255, 255, 255, 0.9);
+        width:45%;
+        margin-left:10%;
+        margin-top:20vh;
+    }
+
+    .container{
+        margin-left:0;
+    }
+
+    #menu-btn.fa-times {
+        transform: rotate(180deg);
+     }
+
+    .nav.show{
+        display:block;
+        animation:ease-in-out 0.5s;
+    }
+}
+

@@ -2,16 +2,11 @@ html,body{
     margin:0;
     padding:0;
     font-family: 'Roboto', sans-serif;
-}
-
-
-
-:root{
-
+    background-color: whitesmoke;
 }
 
 .header{
-    background-color:#FAAB78;
+    background-color:rgba(4, 217, 245, 0.877);
     display:flex;
     align-items: center;
     height:8vh;
@@ -71,11 +66,11 @@ html,body{
 }
 
 .nav{
-    min-height:100vh;
+    height:100vh;
     width:20%;
     position:fixed;
     top:0;
-    background-color: #FFD495;
+    background-color: white;
     padding:0;
     margin:0;
     z-index: 900;
@@ -84,13 +79,14 @@ html,body{
 
 
 .nav-wrapper{
-    width:80%;
-    margin:0 auto;
+    width:100%;
+    margin:o auto;
     margin-top: 12vh;
 }
 
 .nav-wrapper h3{
-margin-top:2rem;
+    margin-top:2rem;
+    margin-left:2.3rem;
 }
 
 .nav-wrapper ul{
@@ -102,28 +98,35 @@ margin-top:2rem;
 }
 
 .nav-wrapper ul li{
+    width:100%;
     margin-top:8px;
     
-    text-align: center;
-    width:100%;
-    padding-top:20px;
-    padding-bottom:20px;
+    
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 .nav-wrapper ul li:hover{
     cursor:pointer;
-    background-color:#888888 ;
+    background-color: #d6d6d6f6;
     border-radius:5px;
+}
+
+.nav-wrapper ul li:active{
+    background-color:#888888 ;
 }
 
 .nav-wrapper ul li a{
     text-decoration: none;
-    
+    margin-left:2.3rem;
     width:100%;
     
     color:black;
-    width:100%;
-    
+    width:100%;   
+}
+
+.nav-icon{
+    margin-right:10px;
 }
 
 .container{
