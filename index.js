@@ -119,6 +119,7 @@ todoSpan.appendChild(todoText);
 
 // Add the todo span to the li element
 li.appendChild(todoSpan);
+todoSpan.className='taskSpan'
 
 // If a due date is entered, create a new span element for the date and add it to the li element
 if (inputedDueDate !== '') {
@@ -128,6 +129,8 @@ if (inputedDueDate !== '') {
   var dateText = document.createTextNode(formattedDate + ', ' + inputedDueTime);
   var dueToText = document.createTextNode('Due To: ');
   var dueToSpan = document.createElement('span');
+  var br = document.createElement('br')
+  li.appendChild(br)
   dueToSpan.appendChild(dueToText);
   li.appendChild(dueToSpan);
   dateSpan.appendChild(dateText);

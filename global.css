@@ -109,7 +109,6 @@ html,body{
 .nav-wrapper ul li:hover{
     cursor:pointer;
     background-color: #d6d6d6f6;
-    border-radius:5px;
 }
 
 .nav-wrapper ul li:active{
