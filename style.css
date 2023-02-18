@@ -312,6 +312,10 @@ textarea {
     .duedate-length input{
         width:48.6%;
     }
+
+    .container-wrapper{
+        margin-top:6vh;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -339,6 +343,10 @@ textarea {
 
     .container{
         margin-left:0;
+    }
+
+    .container-wrapper{
+        margin-top:3vh;
     }
 
     #menu-btn.fa-times {
