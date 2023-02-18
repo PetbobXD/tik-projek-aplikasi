@@ -98,46 +98,36 @@ var inputedDueTime = document.getElementById("taskTime").value;
 
 // Create a new li element
 var li = document.createElement("li");
-li.className='li-task'
+li.className = 'li-task'
 
 // Create a new span element for the to-do text
 var todoSpan = document.createElement("span");
 var todoText = document.createTextNode(inputedTasks);
 todoSpan.appendChild(todoText);
 
-// Create a new span element for the due date
-var dueToSpan = document.createElement("span");
-var dueToText = document.createTextNode("Due To: ");
-dueToSpan.appendChild(dueToText);
-dueToSpan.className='date-span';
-
-// Split the date input into day, month, and year
-var dateArray = inputedDueDate.split("-");
-var year = dateArray[0];
-var month = dateArray[1];
-var day = dateArray[2];
-var dateSpan = document.createElement("span");// Create a new span element for the due date
-var dateText = document.createTextNode(day + "-" + month + "-" + year );
-dateSpan.appendChild(dateText);
-dateSpan.className='date-span';
-
-//create a new span element for the due time
-var timeSpan=document.createElement('span')
-var timeText=document.createTextNode(", " + inputedDueTime);
-timeSpan.appendChild(timeText)
-timeSpan.className='time-span';
-
-// Add the todo and due date spans to the li element
-dueToSpan.appendChild(dateSpan);
-dueToSpan.appendChild(timeSpan);
+// Add the todo span to the li element
 li.appendChild(todoSpan);
-li.appendChild(dueToSpan);
+
+// If a due date is entered, create a new span element for the date and add it to the li element
+if (inputedDueDate !== '') {
+  var dateSpan = document.createElement("span");
+  var dueDate = new Date(inputedDueDate);
+  var formattedDate = dueDate.getDate() + '-' + (dueDate.getMonth() + 1) + '-' + dueDate.getFullYear();
+  var dateText = document.createTextNode(formattedDate + ', ' + inputedDueTime);
+  var dueToText = document.createTextNode('Due To: ');
+  var dueToSpan = document.createElement('span');
+  dueToSpan.appendChild(dueToText);
+  li.appendChild(dueToSpan);
+  dateSpan.appendChild(dateText);
+  dateSpan.className = 'date-span';
+  li.appendChild(dateSpan);
+}
 
 // If input value is empty, show an alert message, else append the li to the list
 if (inputedTasks === '') {
-    alert("You must write something!");
+  alert("You must write something!");
 } else {
-    document.getElementById("Tasks").appendChild(li);
+  document.getElementById("Tasks").appendChild(li);
 }
 
 // Add radio button to li element
@@ -158,9 +148,11 @@ li.appendChild(span);
 // Add the functionality to the close button
 var close = document.getElementsByClassName("delete");
 for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-    }
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
 }
 }
+
+

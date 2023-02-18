@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -19,11 +19,11 @@
     <div>
         <div class="header">
             <div class="logo">
-                <img src="logo.jpeg" height="55px">
+                <img src="logo.png" height="57px" style="margin-left:1rem; margin-top:5px;">
             </div>
             <div style="display: flex; justify-content: flex-end;" class="peripheral">
                 <div class="peripheral-wrapper">
-                    
+
                     <div><i class="fa-solid fa-house" style="font-size:4vh; color:black;" onclick=onclickhome()></i>
                     </div>
                     <div class="header-clock">
@@ -41,22 +41,21 @@
         <div class="nav-wrapper">
             <h3>Listing</h3>
             <ul>
-                <li onclick=onclickli1()><a href="index.html">To-do list</a></li>
-                <hr>
-                <li onclick=onclickli2()><a href="calender.html">Calender</a></li>
-                <hr>
-                <div class="logo">
-                    <li onclick=onclickli3()><a href="reminder.html">Reminder</a></li>
-                </div>
-                <hr>
+                <li onclick=onclickli1()><a href="index.html"><span class="nav-icon"><i class="fa-solid fa-book"></i></span> To-do list</a></li>
+                
+                <li onclick=onclickli2()><a href="calender.html"><span class="nav-icon"><i
+                                class="fa-sharp fa-regular fa-calendar-days"></i></span>Calender</a></li>
+                
+                    <li onclick=onclickli3()><a href="reminder.html"><span class="nav-icon"><i class="fa-regular fa-bell"></i></span> Reminder</a></li>
+                
 
             </ul>
             <h3>Tools</h3>
             <ul>
-                <li onclick=onclickli4()><a href="calculator.html">Calculator</a></li>
-                <hr>
-                <li onclick=onclickli5()><a href="notepad.html">Notepad</a></li>
-                <hr>
+                <li onclick=onclickli4()><a href="calculator.html"><span class="nav-icon"><i class="fa-solid fa-calculator"></i></span>Calculator</a></li>
+                
+                <li onclick=onclickli5()><a href="notepad.html"><span class="nav-icon"><i class="fa-regular fa-newspaper"></i></span>Notepad</a></li>
+                
             </ul>
         </div>
     </div>
@@ -65,44 +64,49 @@
             <div class="content-wrapper">
                 <div class="date" style="display: flex; height: auto;">
                     <p style="margin:none; padding:none; font-weight:bold; font-size:1.3rem;">Today
-                      <p class="today-date" style="margin-top:1.7rem; margin-left:0.7rem; font-size:0.8rem; color:rgb(182, 169, 148)">
-                         <script> document.write(new Date().toDateString()); </script>
+                    <p class="today-date"
+                        style="margin-top:1.7rem; margin-left:0.7rem; font-size:0.8rem; color:rgb(182, 169, 148)">
+                        <script> document.write(new Date().toDateString()); </script>
                 </div>
 
                 <div>
                     <div id="add-task" onclick=onclickadd()>
-                        <i class="fa-regular fa-plus" style="font-size:1.1rem; " ></i><p>Add Task</p>
+                        <i class="fa-regular fa-plus" style="font-size:1.1rem; "></i>
+                        <p>Add Task</p>
                     </div>
 
                     <div id="newTaskForm">
                         <div class="newTaskFormCover">
                             <div class="newTaskFormWrapper">
-                                
-                                    <form>
-                                            <p><label for="tasks"><b>Task</b></label></p>
-                                            <textarea id="taskInput" name="tasks" rows="5" placeholder="Enter your task"></textarea>
-                                        
-                                        
-                                        <div>
-                                            <label for="Due Date"><b>Due Date & Time</b></label>
-                                            <div class="duedate-length">
-                                                <input type="date" id="taskDate"><input type="time" id="taskTime">
-                                            </div>
-                                        </div>
-                                        <div class="formButton">
-                                            <button class="formCancel" type="button" onclick="formCancel()"><b>Cancel</b></button> <button type="submit" class="formSubmit" onclick="formSubmit(event)"><b>Add Task</b></button>
 
+                                <form>
+                                    <p><label for="tasks"><b>Task</b></label></p>
+                                    <textarea id="taskInput" name="tasks" rows="5"
+                                        placeholder="Enter your task"></textarea>
+
+
+                                    <div>
+                                        <label for="Due Date"><b>Due Date & Time</b></label>
+                                        <div class="duedate-length">
+                                            <input type="date" id="taskDate"><input type="time" id="taskTime">
                                         </div>
-                                        
-                                    </form>
-                
-                                
+                                    </div>
+                                    <div class="formButton">
+                                        <button class="formCancel" type="button"
+                                            onclick="formCancel()"><b>Cancel</b></button> <button type="submit"
+                                            class="formSubmit" onclick="formSubmit(event)"><b>Add Task</b></button>
+
+                                    </div>
+
+                                </form>
+
+
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
-                   
+
                 </div>
 
                 <ul id="Tasks">
@@ -112,7 +116,7 @@
         </div>
     </div>
     <script src="index.js">
-       
+
     </script>
 </body>
 
