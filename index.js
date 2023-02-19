@@ -60,15 +60,36 @@ let body=document.body
 let addTask=document.getElementById('add-task')
 let Tasks= document.getElementById('Tasks')
 
+// Initialize the click count to zero
+let clickCount = 0;
 
-function onclickadd(){
+// Get the HTML elements for the button and form
+
+// Add a click event listener to the button that will increment the click count
+addTask.addEventListener('click', function() {
+  // Increment the click count
+  clickCount++;
+
+  // Update the text of the button with the current click count
+  console.log('Click count: ' + clickCount) 
+
+  // Check if the click count is odd
+  if (clickCount % 2 === 1) {
+    // If the click count is odd, show the form
     newTask.style.display="block"
     Tasks.style.display='none'
-}
+  } else {
+    // If the click count is even, hide the form
+    newTask.style.display = 'none';
+    Tasks.style.display='block'
+  }
+});
+
 
 function formCancel(){
     newTask.style.display="none"
     Tasks.style.display='block'
+    clickCount=0
 }
 
 
@@ -98,8 +119,7 @@ function formSubmit(event){
     event.preventDefault()
     newTask.style.display='none'
     Tasks.style.display='block'
-
-
+    clickCount=0
 
 
 // Get the input value and the due date value

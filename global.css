@@ -9,7 +9,7 @@ html,body{
     background-color:rgba(4, 217, 245, 0.877);
     display:flex;
     align-items: center;
-    height:8vh;
+    height:50px;
     width:100%;
     position:fixed;
     top:0;
@@ -46,7 +46,7 @@ html,body{
 
 .header-clock{
     display:flex;
-    height:4.5vh;
+    height:35px;
     width:125px;
     text-align: center;
 }
